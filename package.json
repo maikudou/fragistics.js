@@ -1,7 +1,7 @@
 {
   "name": "fragistics.js",
-  "version": "0.0.0",
-  "description": "Quake 3 log file analizer",
+  "version": "0.1",
+  "description": "Universal multiplayer games log files parser and analyzer",
   "main": "js/fragistics.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,8 @@
   "repository": "",
   "keywords": [
     "quake3",
+    "cod",
+    "call_of_duty",
     "logs"
   ],
   "author": "Mikhail Labanov",
