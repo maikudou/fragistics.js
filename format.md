@@ -1,0 +1,118 @@
+Quake 2 log file format documentation attempt
+=============================================
+
+Each line represents a game event
+
+First decimal in line is time in seconds (with tenths after dot).
+Timer is reset with each new game session. It seems that changing a map in console triggers new GameInit event but does not reset the timer.
+
+Game Events
+-----------
+
+Each game delimited with a string of dashes:
+
+    0.0 ------------------------------------------------------------
+    ...game events...
+    189.5 ------------------------------------------------------------
+    189.5 ------------------------------------------------------------
+    ...other game events...
+    2342.2 ------------------------------------------------------------
+
+### InitGame: [custom commands]
+
+Game start event
+
+Custom commands are delimited by backslash `\` in form of `\command\value`, for example: `\mapname\ztn3tourney1`
+
+Commands are concatenated in one long string:
+
+    0.0 InitGame: \g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_minRate\0\sv_hostname\...yahoo...\dmflags\0\fraglimit\0\timelimit\15\sv_maxclients\64\capturelimit\0\version\ioq3 1.36 linux-x86_64 Apr 12 2009\g_gametype\0\protocol\68\mapname\ztn3tourney1\sv_privateClients\0\sv_allowDownload\0\gamename\osp\gameversion\OSP v1.03a\server_promode\0\g_needpass\0\server_freezetag\0\server_ospauth\0
+
+### ServerTime: timeMS  timeString
+
+Real time of game init
+    
+    61.1 ServerTime:    20130517200406  20:04:06 (17 May 2013)
+
+### ShutdownGame: [?]
+
+Final game shutdown event
+
+### Warmup: [?]
+
+Warmup started
+
+### Game_Start: [?]
+
+Game started
+
+### Game_End: [reason]
+
+Game ended because of `reason`
+
+Reasons: `Timelimit`, `Fraglimit`, `Capturelimit`
+
+### Exit: [reason]
+
+Exited from game because of `reason`
+
+Reasons: `Timelimit hit.`, `Fraglimit hit.`, `Capturelimit hit.`
+
+### score: [score]&nbsp;&nbsp;ping: [ping]&nbsp;&nbsp;client: [clientId] [clientName]
+
+Game stats after exit
+
+    1010.2 score: 16  ping: 0  client: 0 ^0br^3a^0hm^3a^0n
+
+### Weapon_Stats: [clientId] [weaponName:shots:hits:pickups:drops[ , weaponName:shots:hits:pickups:drops]] Given:damageGiven Recvd:damageRecieved Armor:armorCollected Health:healthCollected [TeamDmg:teamDamage]
+
+OSP-specific weapon stats
+    
+    1228.2 Weapon_Stats: 0 Gauntlet:0:7:0:0 MachineGun:588:148:0:0 Shotgun:187:32:8:3 G.Launcher:24:5:18:1 R.Launcher:149:81:32:14 LightningGun:1143:216:29:8 Railgun:42:17:19:8 Plasmagun:267:54:25:2 Given:10647 Recvd:8532 Armor:1780 Health:1215 TeamDmg:523
+    1228.2 Weapon_Stats: 1 Gauntlet:0:1:0:0 MachineGun:645:127:0:0 Shotgun:154:41:17:1 G.Launcher:40:6:34:4 R.Launcher:59:30:14:6 LightningGun:807:198:20:10 Railgun:67:22:38:13 Plasmagun:387:61:18:6 Given:7525 Recvd:7328 Armor:1225 Health:670 TeamDmg:349
+
+
+Client Events
+-------------
+
+### ClientConnect: clientId
+    
+    61.3 ClientConnect: 0
+
+### ClientUserinfoChanged: clientId customCommands
+
+    61.3 ClientUserinfoChanged: 0 n\^0br^3a^0hm^3a^0n\t\0\model\ranger/blue\hmodel\ranger/blue\c1\1\c2\y\hc\100\w\0\l\0\rt\0\st\0
+
+### ClientBegin: clientId
+    
+    61.3 ClientBegin: 0
+
+Item Events
+-----------
+
+### Item: clientId itemType_itemName
+    
+    1258.5 Item: 6 weapon_grenadelauncher
+
+Item Types: `weapon`, `ammo`
+Item Names:
+`weapon`:
+`shotgun`, `grenadelauncher`, `rocketlauncher`, `plasmagun`, `railgun`
+
+`ammo`:
+`shells`, `bullets`, `slugs`, `rockets`, `grenades`, `cells`
+
+
+### Item: clientId item_itemType[_itemName]
+    
+    1258.5 Item: 6 weapon_grenadelauncher
+
+Item Types: `health`, `armor`
+
+Item Names:
+
+`health`:
+`small`, `large`, `mega`
+
+`armor`:
+`shard`, `combat`, `body`

@@ -2,7 +2,7 @@
   "name": "fragistics.js",
   "version": "0.0.0",
   "description": "Quake 3 log file analizer",
-  "main": "fragistics.js",
+  "main": "js/fragistics.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,5 +12,13 @@
     "logs"
   ],
   "author": "Mikhail Labanov",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "coffee-script": "~1.6.2",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-watch": "~0.4.3",
+    "lazy": "~1.0.11",
+    "backbone": "~1.0.0"
+  }
 }
