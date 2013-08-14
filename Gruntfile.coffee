@@ -7,6 +7,8 @@ module.exports = (grunt)->
             compile:
                 files:
                     "js/fragistics.js": "coffee/fragistics.coffee"
+                    "js/parsers.js":    "coffee/parsers.coffee"
+                    "js/games.js":      "coffee/games.coffee"
 
 
         watch:
