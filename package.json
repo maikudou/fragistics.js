@@ -1,6 +1,6 @@
 {
   "name": "fragistics.js",
-  "version": "0.1",
+  "version": "0.0.1alpha",
   "description": "Universal multiplayer games log files parser and analyzer",
   "main": "js/fragistics.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-watch": "~0.4.3",
     "lazy": "~1.0.11",
-    "backbone": "~1.0.0"
+    "backbone": "~1.0.0",
+    "grunt-contrib-jasmine": "~0.5.1"
   }
 }

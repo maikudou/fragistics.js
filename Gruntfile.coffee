@@ -1,6 +1,7 @@
 module.exports = (grunt)->
     grunt.loadNpmTasks 'grunt-contrib-coffee'
     grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.loadNpmTasks 'grunt-contrib-jasmine'
 
     grunt.initConfig 
         coffee:
@@ -10,6 +11,11 @@ module.exports = (grunt)->
                     "js/parsers.js":    "coffee/parsers.coffee"
                     "js/games.js":      "coffee/games.coffee"
 
+        jasmine:
+            regress:
+                src: 'js/**/*.js',
+                options: {
+                    specs: 'spec/*Spec.js'
 
         watch:
             coffee:
