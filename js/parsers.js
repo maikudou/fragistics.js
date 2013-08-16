@@ -233,20 +233,23 @@
         });
       }
       if (searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)) {
-        eventType = searchResult[0];
+        if (!this.currentGame.get('started')) {
+          this.currentGame.set('started', true);
+        }
+        eventType = searchResult[1];
         this.currentGame.get('hits').add({
-          attacker: Number(searchResult[3]),
-          defendant: Number(searchResult[7]),
+          attacker: Number(searchResult[7]),
+          defendant: Number(searchResult[3]),
           weapon: searchResult[10],
           hitpoints: searchResult[11],
           medium: searchResult[12],
           location: searchResult[13] !== 'none' ? searchResult[13] : null,
           timeOffset: lineOffset
         });
-        if (eventType = 'K') {
+        if (eventType === 'K') {
           this.currentGame.get('kills').add({
-            killer: Number(searchResult[3]),
-            victim: Number(searchResult[7]),
+            killer: Number(searchResult[7]),
+            victim: Number(searchResult[3]),
             meansOfDeath: searchResult[12],
             killerWeapon: searchResult[10],
             victimWeapon: null,
@@ -267,11 +270,32 @@
     COD4Parser.prototype.createGame = function(params) {
       this.games.add(new games.Game(params));
       return this.games.last().set({
-        started: true,
         items: new games.Items(),
         kills: new games.Kills(),
         hits: new games.Hits()
       });
+    };
+
+    COD4Parser.prototype.locationsHitRate = function() {
+      var game, location, locations, rate, _i, _len, _ref2, _ref3;
+
+      locations = {};
+      _ref2 = this.games.where({
+        started: true
+      });
+      for (_i = 0, _len = _ref2.length; _i < _len; _i++) {
+        game = _ref2[_i];
+        _ref3 = game.locationsHitRate();
+        for (location in _ref3) {
+          rate = _ref3[location];
+          if (locations[location] != null) {
+            locations[location] += rate;
+          } else {
+            locations[location] = 0;
+          }
+        }
+      }
+      return locations;
     };
 
     return COD4Parser;

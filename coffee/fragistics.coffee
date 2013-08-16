@@ -33,6 +33,9 @@ lazyStream.on 'end', ->
         throw err if err
         console.log('Parsed file saved in "'+'tmp/'+path.basename(filename, path.extname(filename))+'_parsed.json'+'"');
 
+    console.log(parser.locationsHitRate()) if parser.locationsHitRate?
+
+
 lazyStream.lines
 .forEach (line)->
     lineString = line.toString()

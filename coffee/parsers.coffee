@@ -205,13 +205,15 @@ class parsers.COD4Parser extends parsers.Parser
         #kills and hits
         if searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)
 
-            eventType = searchResult[0]
+            @currentGame.set('started', true) unless @currentGame.get('started')
+
+            eventType = searchResult[1]
 
             #a kill is always preceded by a hit in a single event
 
             @currentGame.get('hits').add
-                attacker:   Number(searchResult[3])
-                defendant:  Number(searchResult[7])
+                attacker:   Number(searchResult[7])
+                defendant:  Number(searchResult[3])
                 weapon:     searchResult[10]
                 hitpoints:  searchResult[11]
                 medium:     searchResult[12]
@@ -219,10 +221,10 @@ class parsers.COD4Parser extends parsers.Parser
                 timeOffset: lineOffset
 
             #if kill
-            if eventType = 'K'
+            if eventType == 'K'
                 @currentGame.get('kills').add
-                    killer:         Number(searchResult[3])
-                    victim:         Number(searchResult[7])
+                    killer:         Number(searchResult[7])
+                    victim:         Number(searchResult[3])
                     meansOfDeath:   searchResult[12]
                     killerWeapon:   searchResult[10]
                     victimWeapon:   null
@@ -242,9 +244,20 @@ class parsers.COD4Parser extends parsers.Parser
     createGame: (params)->
         @games.add(new games.Game(params))
         @games.last().set 
-            started: true
             items: new games.Items()
             kills: new games.Kills()
             hits:  new games.Hits()
+
+    locationsHitRate: ->
+        locations = {}
+
+        for game in @games.where({started: true})
+            for location, rate of game.locationsHitRate()
+                if locations[location]?
+                    locations[location] += rate
+                else
+                    locations[location] = 0
+
+        return locations
 
 module.exports = parsers;

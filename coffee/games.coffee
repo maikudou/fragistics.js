@@ -7,6 +7,19 @@ games.Game = backbone.Model.extend
     defaults:
         started: false
 
+    locationsHitRate: ->
+        return null unless @get('hits')?
+        
+        locations = {}
+
+        for hit in @get('hits').models
+            if locations[hit.get('location')]?
+                locations[hit.get('location')]++
+            else
+                locations[hit.get('location')] = 0 if hit.get('location')? 
+
+        return locations
+
 games.Games = backbone.Collection.extend
     model: games.Game
 

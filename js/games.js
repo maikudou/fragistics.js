@@ -8,6 +8,26 @@
   games.Game = backbone.Model.extend({
     defaults: {
       started: false
+    },
+    locationsHitRate: function() {
+      var hit, locations, _i, _len, _ref;
+
+      if (this.get('hits') == null) {
+        return null;
+      }
+      locations = {};
+      _ref = this.get('hits').models;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        hit = _ref[_i];
+        if (locations[hit.get('location')] != null) {
+          locations[hit.get('location')]++;
+        } else {
+          if (hit.get('location') != null) {
+            locations[hit.get('location')] = 0;
+          }
+        }
+      }
+      return locations;
     }
   });
 

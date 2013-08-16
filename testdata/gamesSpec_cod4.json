@@ -1,0 +1,1919 @@
+[
+  {
+    "g_compassShowEnemies": "0",
+    "g_gametype": "war",
+    "gamename": "Call of Duty 4",
+    "mapname": "mp_bloc",
+    "protocol": "6",
+    "shortversion": "1.7",
+    "sv_allowAnonymous": "0",
+    "sv_disableClientConsole": "0",
+    "sv_floodprotect": "4",
+    "sv_hostname": "CoD4Host",
+    "sv_maxclients": "24",
+    "sv_maxPing": "0",
+    "sv_maxRate": "5000",
+    "sv_minPing": "0",
+    "sv_privateClients": "0",
+    "sv_punkbuster": "1",
+    "sv_pure": "1",
+    "sv_voice": "0",
+    "ui_maxclients": "32",
+    "started": true,
+    "items": [
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "m16_gl_mp",
+        "timeOffset": 269
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "mp5_mp",
+        "timeOffset": 288
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "mp5_mp",
+        "timeOffset": 288
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "mp5_mp",
+        "timeOffset": 288
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "mp5_mp",
+        "timeOffset": 289
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 414
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 414
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 414
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 414
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 414
+      },
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "saw_mp",
+        "timeOffset": 452
+      },
+      {
+        "player": 0,
+        "type": "weapon",
+        "name": "m16_gl_mp",
+        "timeOffset": 454
+      },
+      {
+        "player": 0,
+        "type": "weapon",
+        "name": "mp5_mp",
+        "timeOffset": 458
+      },
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "m16_gl_mp",
+        "timeOffset": 462
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 464
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 465
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 465
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 465
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 465
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 466
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 467
+      },
+      {
+        "player": 1,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 469
+      },
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "usp_silencer_mp",
+        "timeOffset": 482
+      },
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "m16_gl_mp",
+        "timeOffset": 482
+      },
+      {
+        "player": 3,
+        "type": "weapon",
+        "name": "m16_gl_mp",
+        "timeOffset": 484
+      }
+    ],
+    "kills": [
+      {
+        "killer": 1,
+        "victim": 0,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 99
+      },
+      {
+        "killer": 1,
+        "victim": 0,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 138
+      },
+      {
+        "killer": 1,
+        "victim": 0,
+        "meansOfDeath": "MOD_GRENADE_SPLASH",
+        "killerWeapon": "frag_grenade_mp",
+        "victimWeapon": null,
+        "timeOffset": 192
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 224
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 232
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 260
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 264
+      },
+      {
+        "killer": 2,
+        "victim": 3,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 279
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 289
+      },
+      {
+        "killer": 0,
+        "victim": 2,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 291
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 344
+      },
+      {
+        "killer": 1,
+        "victim": 3,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 353
+      },
+      {
+        "killer": 2,
+        "victim": 3,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 366
+      },
+      {
+        "killer": 0,
+        "victim": 2,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 377
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 381
+      },
+      {
+        "killer": 0,
+        "victim": 2,
+        "meansOfDeath": "MOD_GRENADE",
+        "killerWeapon": "gl_m16_mp",
+        "victimWeapon": null,
+        "timeOffset": 391
+      },
+      {
+        "killer": 1,
+        "victim": 0,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 412
+      },
+      {
+        "killer": 1,
+        "victim": 3,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 413
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 434
+      },
+      {
+        "killer": 0,
+        "victim": 1,
+        "meansOfDeath": "MOD_GRENADE_SPLASH",
+        "killerWeapon": "gl_m16_mp",
+        "victimWeapon": null,
+        "timeOffset": 443
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 461
+      },
+      {
+        "killer": 0,
+        "victim": 1,
+        "meansOfDeath": "MOD_GRENADE_SPLASH",
+        "killerWeapon": "frag_grenade_mp",
+        "victimWeapon": null,
+        "timeOffset": 477
+      },
+      {
+        "killer": 0,
+        "victim": 2,
+        "meansOfDeath": "MOD_GRENADE_SPLASH",
+        "killerWeapon": "frag_grenade_mp",
+        "victimWeapon": null,
+        "timeOffset": 477
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 515
+      },
+      {
+        "killer": 2,
+        "victim": 3,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "m16_gl_mp",
+        "victimWeapon": null,
+        "timeOffset": 518
+      },
+      {
+        "killer": 1,
+        "victim": 3,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 541
+      },
+      {
+        "killer": 1,
+        "victim": 3,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 550
+      },
+      {
+        "killer": 0,
+        "victim": 2,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 553
+      },
+      {
+        "killer": 1,
+        "victim": 3,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "usp_mp",
+        "victimWeapon": null,
+        "timeOffset": 574
+      },
+      {
+        "killer": 1,
+        "victim": 0,
+        "meansOfDeath": "MOD_RIFLE_BULLET",
+        "killerWeapon": "saw_mp",
+        "victimWeapon": null,
+        "timeOffset": 593
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_PISTOL_BULLET",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 596
+      },
+      {
+        "killer": 3,
+        "victim": 1,
+        "meansOfDeath": "MOD_GRENADE_SPLASH",
+        "killerWeapon": "frag_grenade_mp",
+        "victimWeapon": null,
+        "timeOffset": 598
+      },
+      {
+        "killer": 3,
+        "victim": 2,
+        "meansOfDeath": "MOD_HEAD_SHOT",
+        "killerWeapon": "mp5_mp",
+        "victimWeapon": null,
+        "timeOffset": 612
+      }
+    ],
+    "hits": [
+      {
+        "attacker": 0,
+        "defendant": 0,
+        "weapon": "concussion_grenade_mp",
+        "hitpoints": "1",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 66
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 96
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "gl_m16_mp",
+        "hitpoints": "99",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 96
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "37",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 97
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 99
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "42",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 136
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "42",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 137
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "42",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "neck",
+        "timeOffset": 138
+      },
+      {
+        "attacker": 0,
+        "defendant": 0,
+        "weapon": "concussion_grenade_mp",
+        "hitpoints": "1",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 150
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "47",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 184
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "frag_grenade_mp",
+        "hitpoints": "238",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 192
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "42",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 220
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "42",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 220
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 223
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 223
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 223
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 224
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 229
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "56",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 232
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "neck",
+        "timeOffset": 232
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "56",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 232
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 257
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 259
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_leg_upper",
+        "timeOffset": 260
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_lower",
+        "timeOffset": 263
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 263
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_lower",
+        "timeOffset": 264
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 278
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "71",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 279
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 288
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 288
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 289
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_leg_lower",
+        "timeOffset": 290
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_leg_upper",
+        "timeOffset": 291
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 335
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 343
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 343
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 344
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 344
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 344
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 351
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 352
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 353
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 366
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 366
+      },
+      {
+        "attacker": 2,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "29",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_lower",
+        "timeOffset": 374
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_upper",
+        "timeOffset": 374
+      },
+      {
+        "attacker": 2,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "2",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 374
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 374
+      },
+      {
+        "attacker": 2,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 374
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "4",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 375
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "4",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 375
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_foot",
+        "timeOffset": 376
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_leg_lower",
+        "timeOffset": 377
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_lower",
+        "timeOffset": 380
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_upper",
+        "timeOffset": 380
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "neck",
+        "timeOffset": 381
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 381
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 388
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 389
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 389
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 390
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "23",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_upper",
+        "timeOffset": 390
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "gl_m16_mp",
+        "hitpoints": "135",
+        "medium": "MOD_GRENADE",
+        "location": null,
+        "timeOffset": 391
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "gl_m16_mp",
+        "hitpoints": "73",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 391
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_upper",
+        "timeOffset": 401
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "30",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 401
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "4",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_foot",
+        "timeOffset": 411
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 411
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 411
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 412
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 412
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 413
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 413
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 413
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "21",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 430
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 433
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 434
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 434
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 434
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "21",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 434
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "21",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 439
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "15",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_upper",
+        "timeOffset": 439
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "9",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 439
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "gl_m16_mp",
+        "hitpoints": "90",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 443
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_arm_lower",
+        "timeOffset": 460
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "saw_mp",
+        "hitpoints": "22",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 460
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 461
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "saw_mp",
+        "hitpoints": "22",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 461
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 461
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 461
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 461
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 462
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "9",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 462
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "40",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 468
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 468
+      },
+      {
+        "attacker": 1,
+        "defendant": 1,
+        "weapon": "frag_grenade_mp",
+        "hitpoints": "45",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 471
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "usp_silencer_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 473
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "usp_silencer_mp",
+        "hitpoints": "31",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_lower",
+        "timeOffset": 475
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "usp_silencer_mp",
+        "hitpoints": "31",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_leg_lower",
+        "timeOffset": 475
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "frag_grenade_mp",
+        "hitpoints": "115",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 477
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "frag_grenade_mp",
+        "hitpoints": "84",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 477
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 498
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "17",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 499
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "10",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 499
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 509
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 509
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_lower",
+        "timeOffset": 514
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 515
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 516
+      },
+      {
+        "attacker": 2,
+        "defendant": 3,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "56",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 518
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "15",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 540
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 541
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 541
+      },
+      {
+        "attacker": 2,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "37",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 541
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 541
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "23",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 549
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 549
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "23",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 549
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "15",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 550
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 550
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 551
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 551
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "28",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 551
+      },
+      {
+        "attacker": 0,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "39",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 553
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_lower",
+        "timeOffset": 555
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "beretta_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 557
+      },
+      {
+        "attacker": 0,
+        "defendant": 1,
+        "weapon": "beretta_mp",
+        "hitpoints": "20",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 560
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 567
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "saw_mp",
+        "hitpoints": "42",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 567
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "24",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 568
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "mp5_mp",
+        "hitpoints": "24",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_leg_upper",
+        "timeOffset": 568
+      },
+      {
+        "attacker": 2,
+        "defendant": 0,
+        "weapon": "m16_gl_mp",
+        "hitpoints": "53",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 571
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "usp_mp",
+        "hitpoints": "56",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 574
+      },
+      {
+        "attacker": 1,
+        "defendant": 3,
+        "weapon": "usp_mp",
+        "hitpoints": "56",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 574
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "6",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 587
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 593
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "left_leg_upper",
+        "timeOffset": 593
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 593
+      },
+      {
+        "attacker": 1,
+        "defendant": 0,
+        "weapon": "saw_mp",
+        "hitpoints": "30",
+        "medium": "MOD_RIFLE_BULLET",
+        "location": "torso_upper",
+        "timeOffset": 593
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_upper",
+        "timeOffset": 596
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "left_arm_upper",
+        "timeOffset": 596
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "right_arm_lower",
+        "timeOffset": 596
+      },
+      {
+        "attacker": 3,
+        "defendant": 1,
+        "weapon": "frag_grenade_mp",
+        "hitpoints": "134",
+        "medium": "MOD_GRENADE_SPLASH",
+        "location": null,
+        "timeOffset": 598
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 611
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "40",
+        "medium": "MOD_PISTOL_BULLET",
+        "location": "torso_lower",
+        "timeOffset": 611
+      },
+      {
+        "attacker": 3,
+        "defendant": 2,
+        "weapon": "mp5_mp",
+        "hitpoints": "56",
+        "medium": "MOD_HEAD_SHOT",
+        "location": "head",
+        "timeOffset": 612
+      }
+    ],
+    "players": [
+      {
+        "id": "0",
+        "connectOffset": 3,
+        "name": "maikudou",
+        "hash": ""
+      },
+      {
+        "id": "1",
+        "connectOffset": 59,
+        "name": "nim579",
+        "hash": "82ceb3742e4cbd6cd0523fb6fa0973b7"
+      },
+      {
+        "id": "2",
+        "connectOffset": 131,
+        "name": "kuteev",
+        "hash": "8035fe74b5bf7aa6fea35f41a12c07b5"
+      },
+      {
+        "id": "3",
+        "connectOffset": 192,
+        "name": "emuravjev",
+        "hash": "c501fb2910ad96a55cd96923bcf49102"
+      }
+    ]
+  }
+]

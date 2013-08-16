@@ -39,12 +39,15 @@
     if (!fs.existsSync('tmp')) {
       fs.mkdirSync('tmp');
     }
-    return fs.writeFile('tmp/' + path.basename(filename, path.extname(filename)) + '_parsed.json', JSON.stringify(parser.games.toJSON(), null, '  '), function(err) {
+    fs.writeFile('tmp/' + path.basename(filename, path.extname(filename)) + '_parsed.json', JSON.stringify(parser.games.toJSON(), null, '  '), function(err) {
       if (err) {
         throw err;
       }
       return console.log('Parsed file saved in "' + 'tmp/' + path.basename(filename, path.extname(filename)) + '_parsed.json' + '"');
     });
+    if (parser.locationsHitRate != null) {
+      return console.log(parser.locationsHitRate());
+    }
   });
 
   lazyStream.lines.forEach(function(line) {
