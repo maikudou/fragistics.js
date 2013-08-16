@@ -81,6 +81,10 @@ describe "Game.locationsHitRate", ->
         for location, value of correctValues
             expect(testValues[location]).toBe(value)
 
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.locationsHitRate()).toBe(null)
+
 
 describe "Game.playersHitRate", ->
     game = null
@@ -99,16 +103,19 @@ describe "Game.playersHitRate", ->
         expect(game.playersHitRate).toBeDefined()
 
         correctValues =
-            maikudou: 23
-            nim579: 41
-            kuteev: 13
-            emuravjev: 70
+            0: 23
+            1: 41
+            2: 13
+            3: 70
 
         testValues = game.playersHitRate()
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
 
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playersHitRate()).toBe(null)
 
 describe "Game.playersHurtRate", ->
     game = null
@@ -127,15 +134,19 @@ describe "Game.playersHurtRate", ->
         expect(game.playersHurtRate).toBeDefined()
 
         correctValues =
-            maikudou: 28
-            nim579: 50
-            kuteev: 42
-            emuravjev: 27
+            0: 28
+            1: 50
+            2: 42
+            3: 27
 
         testValues = game.playersHurtRate()
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playersHurtRate()).toBe(null)
 
 
 describe "Game.playersKillRate", ->
@@ -155,15 +166,19 @@ describe "Game.playersKillRate", ->
         expect(game.playersKillRate).toBeDefined()
 
         correctValues =
-            maikudou: 7
-            nim579: 10
-            kuteev: 3
-            emuravjev: 13
+            0: 7
+            1: 10
+            2: 3
+            3: 13
 
         testValues = game.playersKillRate()
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playersKillRate()).toBe(null)
 
 describe "Game.playerKillVictimRate", ->
     game = null
@@ -182,13 +197,17 @@ describe "Game.playerKillVictimRate", ->
         expect(game.playerKillVictimRate).toBeDefined()
 
         correctValues =
-            nim579: 7
-            kuteev: 6
+            1: 7
+            2: 6
 
         testValues = game.playerKillVictimRate(3)
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playerKillVictimRate()).toBe(null)
 
 
 describe "Game.playersDeathRate", ->
@@ -208,15 +227,19 @@ describe "Game.playersDeathRate", ->
         expect(game.playersDeathRate).toBeDefined()
 
         correctValues =
-            maikudou: 5
-            nim579: 9
-            kuteev: 11
-            emuravjev: 8
+            0: 5
+            1: 9
+            2: 11
+            3: 8
 
         testValues = game.playersDeathRate()
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playersDeathRate()).toBe(null)
 
 
 describe "Game.playerDeathKillerRate", ->
@@ -233,16 +256,20 @@ describe "Game.playerDeathKillerRate", ->
         game = null
 
     it "should return correct values", ->
-        expect(game.playerKillVictimRate).toBeDefined()
+        expect(game.playerDeathKillerRate).toBeDefined()
 
         correctValues =
-            maikudou: 2
-            emuravjev: 7
+            0: 2
+            3: 7
 
-        testValues = game.playerKillVictimRate(1)
+        testValues = game.playerDeathKillerRate(1)
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playerDeathKillerRate()).toBe(null)
 
 
 describe "Game.playersItemGetRate", ->
@@ -262,14 +289,19 @@ describe "Game.playersItemGetRate", ->
         expect(game.playersItemGetRate).toBeDefined()
 
         correctValues =
-            maikudou: 2
-            nim579: 38
-            emuravjev: 6
+            0: 2
+            1: 38
+            3: 6
 
         testValues = game.playersItemGetRate()
 
         for player, value of correctValues
             expect(testValues[player]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playersItemGetRate()).toBe(null)
+
 
 describe "Game.playerItemTypeGetRate", ->
     game = null
@@ -294,6 +326,10 @@ describe "Game.playerItemTypeGetRate", ->
 
         for type, value of correctValues
             expect(testValues[type]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playerItemTypeGetRate()).toBe(null)
 
 
 describe "Game.playerItemNameGetRate", ->
@@ -320,4 +356,9 @@ describe "Game.playerItemNameGetRate", ->
 
         for item, value of correctValues
             expect(testValues[item]).toBe(value)
+
+    it "should return 'null' if no values", ->
+        emptyGame = new games.Game()
+        expect(emptyGame.playerItemNameGetRate()).toBe(null)
+
 
