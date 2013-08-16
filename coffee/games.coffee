@@ -189,4 +189,4 @@ games.Hits = backbone.Collection.extend
     model: games.Hit
 
 
-module.exports = games;
+module.exports = games

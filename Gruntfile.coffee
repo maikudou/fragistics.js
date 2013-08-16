@@ -20,18 +20,6 @@ module.exports = (grunt)->
             useCoffee: true,
             extensions: 'coffee'
 
-        jasmine:
-            regress:
-                src: 'js/**/*.js'
-                options:
-                    specs: 'spec/*Spec.js'
-
-            games:
-                src: 'js/games.js'
-                options:
-                    specs: 'spec/gamesSpec.js'
-
-
         jade:
             compile:
                 files:

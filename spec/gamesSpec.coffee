@@ -1,7 +1,6 @@
 games = require('../js/games.js')
 testData_cod4 = require('../testdata/gamesSpec_cod4.json')[0]
 
-
 describe "Game", ->
     game = null
     
