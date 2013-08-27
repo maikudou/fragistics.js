@@ -1,4 +1,5 @@
-games = require('../js/games.js')
+games   = require('../js/games.js')
+players = require('../js/players.js')
 testData_cod4 = require('../testdata/gamesSpec_cod4.json')[0]
 
 describe "Game", ->
@@ -51,7 +52,7 @@ describe "Game.locationsHitRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -93,7 +94,7 @@ describe "Game.playersHitRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -124,7 +125,7 @@ describe "Game.playersHurtRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -156,7 +157,7 @@ describe "Game.playersKillRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -187,7 +188,7 @@ describe "Game.playerKillVictimRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -217,7 +218,7 @@ describe "Game.playersDeathRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -249,7 +250,7 @@ describe "Game.playerDeathKillerRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -279,7 +280,7 @@ describe "Game.playersItemGetRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -310,7 +311,7 @@ describe "Game.playerItemTypeGetRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null
@@ -339,7 +340,7 @@ describe "Game.playerItemNameGetRate", ->
         game.set 'items',   new games.Items(game.get('items'))
         game.set 'kills',   new games.Kills(game.get('kills'))
         game.set 'hits',    new games.Hits(game.get('hits'))
-        game.set 'players', new games.Players(game.get('players'))
+        game.set 'players', new players.Players(game.get('players'))
 
     afterEach ->
         game = null

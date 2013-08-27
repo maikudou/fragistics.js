@@ -1,5 +1,5 @@
 (function() {
-  var fs, games, parsers, _ref, _ref1,
+  var fs, games, parsers, players, _ref, _ref1,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
@@ -8,6 +8,8 @@
   parsers = {};
 
   games = require('./games.js');
+
+  players = require('./players.js');
 
   /*
   Prototype
@@ -62,9 +64,11 @@
     Q3Parser.prototype.name = 'Q3 OSP Parser';
 
     Q3Parser.prototype.processLine = function(lineString) {
-      var clientId, date, i, itemName, itemType, lineOffset, obj, paramName, prevIndex, searchResult, user, value, _i, _j, _len, _len1, _ref1, _ref2;
+      var clientId, date, i, itemName, itemType, lineOffset, obj, paramName, player, prevIndex, searchResult, stat, statSearch, user, value, _i, _j, _k, _len, _len1, _len2, _ref1, _ref2, _ref3, _results;
 
-      lineOffset = Number(/^(\d+\.\d+) .+/.exec(lineString)[1]);
+      if (/^(\d+\.\d+) .+/.exec(lineString)) {
+        lineOffset = Number(/^(\d+\.\d+) .+/.exec(lineString)[1]);
+      }
       if (lineString.indexOf('InitGame') > -1) {
         obj = {};
         if (searchResult = /InitGame: \\(.+)/.exec(lineString)) {
@@ -95,32 +99,56 @@
             startTimeOffset: lineOffset
           });
         }
+        if (lineString.indexOf('Game_End') > -1) {
+          if (searchResult = /Game_End: (.+)/.exec(lineString)) {
+            this.currentGame.set({
+              endReason: searchResult[1],
+              endTimeOffset: lineOffset
+            });
+          }
+        }
         if (lineString.indexOf('ClientConnect') > -1) {
           if (searchResult = /ClientConnect: (\d+)/.exec(lineString)) {
             clientId = searchResult[1];
             if (!this.currentGame.get('players')) {
-              this.currentGame.set('players', new games.Players());
+              this.currentGame.set('players', new players.Players());
+            }
+            if (user = this.currentGame.get('players').where({
+              clientId: clientId,
+              active: true
+            })[0]) {
+              user.set({
+                active: false
+              });
             }
             this.currentGame.get('players').add({
-              id: clientId,
-              connectOffset: lineOffset
+              id: this.currentGame.get('players').length,
+              connectOffset: lineOffset,
+              active: true,
+              clientId: clientId
             });
           }
         }
-        if (lineString.indexOf('ClientBegun') > -1) {
-          if (searchResult = /ClientBegun: (\d+)/.exec(lineString)) {
+        if (lineString.indexOf('ClientBegin') > -1) {
+          if (searchResult = /ClientBegin: (\d+)/.exec(lineString)) {
             clientId = searchResult[1];
-            if (user = this.currentGame.get('players').get(searchResult[1])) {
+            if (user = this.currentGame.get('players').where({
+              clientId: clientId,
+              active: true
+            })[0]) {
               user.set({
-                begun: true,
-                begunOffset: lineOffset
+                joinedGame: true,
+                joinedGameOffset: lineOffset
               });
             }
           }
         }
         if (lineString.indexOf('ClientUserinfoChanged') > -1) {
           if (searchResult = /ClientUserinfoChanged: (\d+) (.+)/.exec(lineString)) {
-            if (user = this.currentGame.get('players').get(searchResult[1])) {
+            if (user = this.currentGame.get('players').where({
+              clientId: searchResult[1],
+              active: true
+            })[0]) {
               obj = {};
               prevIndex = '';
               _ref2 = searchResult[2].split('\\');
@@ -159,7 +187,7 @@
         }
         if (lineString.indexOf('Kill:') > -1) {
           if (searchResult = /Kill: (\d+) (\d+) (\d+): .+ by (\w+) (\d+)/.exec(lineString)) {
-            return this.currentGame.get('kills').add({
+            this.currentGame.get('kills').add({
               killer: Number(searchResult[1]),
               victim: Number(searchResult[2]),
               meansOfDeath: searchResult[3],
@@ -169,13 +197,86 @@
             });
           }
         }
+        if (lineString.indexOf('say:') > -1) {
+          if (searchResult = /say: ((\S+): (\S+))/.exec(lineString)) {
+            this.currentGame.get('chats').add({
+              type: 'global',
+              player: this.currentGame.get('players').where({
+                name: searchResult[2],
+                active: true
+              })[0].id,
+              rawText: searchResult[1],
+              message: searchResult[3],
+              timeOffset: lineOffset
+            });
+          }
+        }
+        if (lineString.indexOf('sayteam:') > -1) {
+          if (searchResult = /sayteam: ((\S+): (\S+))/.exec(lineString)) {
+            this.currentGame.get('chats').add({
+              type: 'team',
+              player: this.currentGame.get('players').where({
+                name: searchResult[2],
+                active: true
+              })[0].id,
+              rawText: searchResult[1],
+              message: searchResult[3],
+              timeOffset: lineOffset
+            });
+          }
+        }
+        if (lineString.indexOf('score:') > -1) {
+          if (searchResult = /score: (\-?\d+)\s+ping: (\d+)\s+client: (\d+)/.exec(lineString)) {
+            this.currentGame.get('players').where({
+              clientId: searchResult[3],
+              active: true
+            })[0].set({
+              score: Number(searchResult[1]),
+              ping: Number(searchResult[2])
+            });
+          }
+        }
+        if (lineString.indexOf('Weapon_Stats:') > -1) {
+          if (searchResult = /Weapon_Stats: (\d+)\s?(.*) Given:(\d+) Recvd:(\d+) Armor:(\d+) Health:(\d+)/.exec(lineString)) {
+            player = this.currentGame.get('players').where({
+              clientId: searchResult[1],
+              active: true
+            })[0];
+            player.set({
+              damageGiven: Number(searchResult[3]),
+              damageRecieved: Number(searchResult[4]),
+              armorTaken: Number(searchResult[5]),
+              healthTaken: Number(searchResult[6])
+            });
+            if (searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])) {
+              _ref3 = searchResult[0].split(' ');
+              _results = [];
+              for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+                stat = _ref3[_k];
+                if (statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)) {
+                  _results.push(player.get('weaponStats').add({
+                    weapon: statSearch[1],
+                    shots: Number(statSearch[2]),
+                    hits: Number(statSearch[3]),
+                    pickups: Number(statSearch[4]),
+                    drops: Number(statSearch[5])
+                  }));
+                } else {
+                  _results.push(void 0);
+                }
+              }
+              return _results;
+            }
+          }
+        }
       }
     };
 
     Q3Parser.prototype.createGame = function(params) {
       this.games.add(new games.Game(params));
       this.games.last().set('items', new games.Items());
-      return this.games.last().set('kills', new games.Kills());
+      this.games.last().set('kills', new games.Kills());
+      return this.games.last().set('chats', new games.Chats());
     };
 
     return Q3Parser;
@@ -223,13 +324,14 @@
       this.currentGame = this.games.last();
       if (searchResult = /J;(.*);(\d+);(.*)/.exec(lineString)) {
         if (!this.currentGame.get('players')) {
-          this.currentGame.set('players', new games.Players());
+          this.currentGame.set('players', new players.Players());
         }
         this.currentGame.get('players').add({
           id: searchResult[2],
           connectOffset: lineOffset,
           name: searchResult[3],
-          hash: searchResult[1]
+          hash: searchResult[1],
+          joinedGame: true
         });
       }
       if (searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)) {

@@ -1,6 +1,7 @@
 fs       = require('fs')
 parsers = {}
 games    = require('./games.js')
+players  = require('./players.js')
 
 ###
 Prototype
@@ -40,7 +41,7 @@ class parsers.Q3Parser extends parsers.Parser
     name: 'Q3 OSP Parser'
     processLine: (lineString)->
         #event time offset
-        lineOffset = Number(/^(\d+\.\d+) .+/.exec(lineString)[1])
+        lineOffset = Number(/^(\d+\.\d+) .+/.exec(lineString)[1]) if /^(\d+\.\d+) .+/.exec(lineString)
 
         #game loads
         if lineString.indexOf('InitGame') > -1
@@ -79,33 +80,45 @@ class parsers.Q3Parser extends parsers.Parser
                     started:            true
                     startTimeOffset:    lineOffset
 
+            if lineString.indexOf('Game_End') > -1
+                if searchResult = /Game_End: (.+)/.exec(lineString)
+                    @currentGame.set
+                        endReason:      searchResult[1]
+                        endTimeOffset:  lineOffset
+
             #player connect
             if lineString.indexOf('ClientConnect') > -1
                 if searchResult = /ClientConnect: (\d+)/.exec(lineString)
                     clientId = searchResult[1]
                     
-                    @currentGame.set('players', new games.Players()) unless @currentGame.get('players')
+                    @currentGame.set('players', new players.Players()) unless @currentGame.get('players')
+
+                    if user = @currentGame.get('players').where({clientId: clientId, active: true})[0]
+                        user.set
+                            active: false
 
                     @currentGame.get('players').add
-                        id:             clientId
+                        id:             @currentGame.get('players').length
                         connectOffset:  lineOffset
+                        active:         true
+                        clientId:       clientId
 
             #player begun game
-            if lineString.indexOf('ClientBegun') > -1
-                if searchResult = /ClientBegun: (\d+)/.exec(lineString)
+            if lineString.indexOf('ClientBegin') > -1
+                if searchResult = /ClientBegin: (\d+)/.exec(lineString)
                     clientId = searchResult[1]
 
-                    if user = @currentGame.get('players').get(searchResult[1])
+                    if user = @currentGame.get('players').where({clientId: clientId, active: true})[0]
 
                         user.set
-                            begun:          true
-                            begunOffset:    lineOffset
+                            joinedGame:          true
+                            joinedGameOffset:    lineOffset
 
             #user info
             if lineString.indexOf('ClientUserinfoChanged') > -1
                 if searchResult = /ClientUserinfoChanged: (\d+) (.+)/.exec(lineString)
 
-                    if user = @currentGame.get('players').get(searchResult[1])
+                    if user = @currentGame.get('players').where({clientId: searchResult[1], active: true})[0]
                         obj = {}
                         prevIndex = ''
 
@@ -149,11 +162,63 @@ class parsers.Q3Parser extends parsers.Parser
                         victimWeapon:   searchResult[5]
                         timeOffset:     lineOffset
 
+            #chats
+            if lineString.indexOf('say:') > -1
+                if searchResult = /say: ((\S+): (\S+))/.exec(lineString)
+
+                    @currentGame.get('chats').add
+                        type:       'global'
+                        player:     @currentGame.get('players').where({name: searchResult[2], active: true})[0].id
+                        rawText:    searchResult[1]
+                        message:    searchResult[3]
+                        timeOffset: lineOffset
+
+            if lineString.indexOf('sayteam:') > -1
+                if searchResult = /sayteam: ((\S+): (\S+))/.exec(lineString)
+
+                    @currentGame.get('chats').add
+                        type:       'team'
+                        player:     @currentGame.get('players').where({name: searchResult[2], active: true})[0].id
+                        rawText:    searchResult[1]
+                        message:    searchResult[3]
+                        timeOffset: lineOffset
+
+            #scores
+            if lineString.indexOf('score:') > -1
+                if searchResult = /score: (\-?\d+)\s+ping: (\d+)\s+client: (\d+)/.exec(lineString)
+                    @currentGame.get('players').where({clientId: searchResult[3], active: true})[0].set
+                        score: Number(searchResult[1])
+                        ping: Number(searchResult[2])
+
+            #stats
+            if lineString.indexOf('Weapon_Stats:') > -1
+                if searchResult = /Weapon_Stats: (\d+)\s?(.*) Given:(\d+) Recvd:(\d+) Armor:(\d+) Health:(\d+)/.exec(lineString)
+                    player = @currentGame.get('players').where({clientId: searchResult[1], active: true})[0]
+
+                    player.set
+                        damageGiven:    Number(searchResult[3])
+                        damageRecieved: Number(searchResult[4])
+                        armorTaken:     Number(searchResult[5])
+                        healthTaken:    Number(searchResult[6])
+
+                    if searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])
+
+                        for stat in searchResult[0].split(' ')
+                            if statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)
+                            
+                                player.get('weaponStats').add
+                                    weapon:     statSearch[1]
+                                    shots:      Number(statSearch[2])
+                                    hits:       Number(statSearch[3])
+                                    pickups:    Number(statSearch[4])
+                                    drops:      Number(statSearch[5])
+                            
+
     createGame: (params)->
         @games.add(new games.Game(params))
         @games.last().set 'items', new games.Items()
         @games.last().set 'kills', new games.Kills()
-
+        @games.last().set 'chats', new games.Chats()
 
 
 ###
@@ -194,13 +259,14 @@ class parsers.COD4Parser extends parsers.Parser
         #player connect
         if searchResult = /J;(.*);(\d+);(.*)/.exec(lineString)
             
-            @currentGame.set('players', new games.Players()) unless @currentGame.get('players')
+            @currentGame.set('players', new players.Players()) unless @currentGame.get('players')
 
             @currentGame.get('players').add
                 id:             searchResult[2]
                 connectOffset:  lineOffset
                 name:           searchResult[3]
                 hash:           searchResult[1]
+                joinedGame:     true
 
         #kills and hits
         if searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)

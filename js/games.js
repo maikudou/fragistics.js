@@ -1,7 +1,9 @@
 (function() {
-  var backbone, games;
+  var backbone, games, players;
 
   backbone = require("backbone");
+
+  players = require('./players.js');
 
   games = {};
 
@@ -223,16 +225,6 @@
     model: games.Game
   });
 
-  games.Player = backbone.Model.extend({
-    defaults: {
-      name: 'unnamed'
-    }
-  });
-
-  games.Players = backbone.Collection.extend({
-    model: games.Player
-  });
-
   games.Item = backbone.Model.extend({
     defaults: {
       type: null,
@@ -273,6 +265,20 @@
 
   games.Hits = backbone.Collection.extend({
     model: games.Hit
+  });
+
+  games.Chat = backbone.Model.extend({
+    defaults: {
+      type: null,
+      player: null,
+      rawText: null,
+      message: null,
+      timeOffset: null
+    }
+  });
+
+  games.Chats = backbone.Collection.extend({
+    model: games.Chat
   });
 
   module.exports = games;

@@ -1,4 +1,5 @@
 backbone = require("backbone")
+players  = require('./players.js')
 
 games = {}
 
@@ -140,16 +141,6 @@ games.Game = backbone.Model.extend
 games.Games = backbone.Collection.extend
     model: games.Game
 
-
-#Generic player
-games.Player = backbone.Model.extend
-    defaults:
-        name: 'unnamed'
-
-games.Players = backbone.Collection.extend
-    model: games.Player
-
-
 #Generic obtainable game item event (i.e.: ammo, powerups, etc.)
 games.Item = backbone.Model.extend
     defaults:
@@ -187,6 +178,19 @@ games.Hit = backbone.Model.extend
 
 games.Hits = backbone.Collection.extend
     model: games.Hit
+
+
+#Generic chat entry
+games.Chat = backbone.Model.extend
+    defaults:
+        type: null
+        player: null
+        rawText: null
+        message: null
+        timeOffset: null
+
+games.Chats = backbone.Collection.extend
+    model: games.Chat
 
 
 module.exports = games

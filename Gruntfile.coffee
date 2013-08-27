@@ -7,10 +7,13 @@ module.exports = (grunt)->
     grunt.initConfig 
         coffee:
             compile:
-                files:
-                    "js/fragistics.js": "coffee/fragistics.coffee"
-                    "js/parsers.js":    "coffee/parsers.coffee"
-                    "js/games.js":      "coffee/games.coffee"
+                files: [
+                    expand: true
+                    cwd: 'coffee'
+                    src: ['**/*.coffee']
+                    dest: 'js'
+                    ext: '.js'
+                ]
 
         jasmine_node:
             specNameMatcher: "spec"
@@ -29,7 +32,7 @@ module.exports = (grunt)->
 
         watch:
             coffee:
-                files: ['coffee/*.coffee']
+                files: ['coffee/**/*.coffee']
                 tasks: ['coffee:compile']
 
             jade:
