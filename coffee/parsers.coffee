@@ -237,7 +237,6 @@ class parsers.COD4Parser extends parsers.Parser
 
         #game loads
         if lineString.indexOf('InitGame') > -1
-            
             obj = {}
             
             if searchResult = /InitGame: \\(.+)/.exec(lineString)
@@ -269,11 +268,18 @@ class parsers.COD4Parser extends parsers.Parser
                 joinedGame:     true
 
         #kills and hits
-        if searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)
+        if searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\-?\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)
 
-            @currentGame.set('started', true) unless @currentGame.get('started')
+            #game is considered not started unless where was a single kill or damage
+            unless @currentGame.get('started')
+                @currentGame.set('started', true) if searchResult[8] != 'world' && searchResult[9] != searchResult[5]
 
             eventType = searchResult[1]
+
+
+            #player considered active if them inflicted any damage
+            if @currentGame.get('players').get(searchResult[7]) and !@currentGame.get('players').get(searchResult[7]).get('active')
+                @currentGame.get('players').get(searchResult[7]).set('active', true)
 
             #a kill is always preceded by a hit in a single event
 
@@ -305,14 +311,35 @@ class parsers.COD4Parser extends parsers.Parser
                 name:       searchResult[4]
                 timeOffset: lineOffset
 
-        #  4:48 Weapon;82ceb3742e4cbd6cd0523fb6fa0973b7;1;nim579;mp5_mp
+        
+        #chats
+        if searchResult = /(say(?:team)?);(\w*);(\d+);(\S+);(.*)$/.exec(lineString)
 
+            @currentGame.get('chats').add
+                type:       if searchResult[1] == 'sayteam' then 'team' else 'global'
+                player:     Number(searchResult[3])
+                rawText:    searchResult[5]
+                message:    searchResult[5]
+                timeOffset: lineOffset
+
+
+        #game ends
+        if searchResult = /(ExitLevel|ShutdownGame):\s*(.*)$/.exec(lineString)
+            if searchResult[1] == 'ExitLevel'
+                @currentGame.set
+                    endReason:      searchResult[2]
+            else 
+                @currentGame.set
+                    endTimeOffset:  lineOffset
+
+        
     createGame: (params)->
         @games.add(new games.Game(params))
         @games.last().set 
             items: new games.Items()
             kills: new games.Kills()
             hits:  new games.Hits()
+            chats: new games.Chats()
 
     locationsHitRate: ->
         locations = {}

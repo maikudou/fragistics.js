@@ -334,11 +334,16 @@
           joinedGame: true
         });
       }
-      if (searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)) {
+      if (searchResult = /(K|D);(.*);(\d+);(.*);(.*);(.*);(\-?\d+);(.*);(.*);(.*);(\d+);(.*);(.*)/.exec(lineString)) {
         if (!this.currentGame.get('started')) {
-          this.currentGame.set('started', true);
+          if (searchResult[8] !== 'world' && searchResult[9] !== searchResult[5]) {
+            this.currentGame.set('started', true);
+          }
         }
         eventType = searchResult[1];
+        if (this.currentGame.get('players').get(searchResult[7]) && !this.currentGame.get('players').get(searchResult[7]).get('active')) {
+          this.currentGame.get('players').get(searchResult[7]).set('active', true);
+        }
         this.currentGame.get('hits').add({
           attacker: Number(searchResult[7]),
           defendant: Number(searchResult[3]),
@@ -360,12 +365,32 @@
         }
       }
       if (searchResult = /Weapon;(.*);(\d+);(.*);(.*)/.exec(lineString)) {
-        return this.currentGame.get('items').add({
+        this.currentGame.get('items').add({
           player: Number(searchResult[2]),
           type: 'weapon',
           name: searchResult[4],
           timeOffset: lineOffset
         });
+      }
+      if (searchResult = /(say(?:team)?);(\w*);(\d+);(\S+);(.*)$/.exec(lineString)) {
+        this.currentGame.get('chats').add({
+          type: searchResult[1] === 'sayteam' ? 'team' : 'global',
+          player: Number(searchResult[3]),
+          rawText: searchResult[5],
+          message: searchResult[5],
+          timeOffset: lineOffset
+        });
+      }
+      if (searchResult = /(ExitLevel|ShutdownGame):\s*(.*)$/.exec(lineString)) {
+        if (searchResult[1] === 'ExitLevel') {
+          return this.currentGame.set({
+            endReason: searchResult[2]
+          });
+        } else {
+          return this.currentGame.set({
+            endTimeOffset: lineOffset
+          });
+        }
       }
     };
 
@@ -374,7 +399,8 @@
       return this.games.last().set({
         items: new games.Items(),
         kills: new games.Kills(),
-        hits: new games.Hits()
+        hits: new games.Hits(),
+        chats: new games.Chats()
       });
     };
 

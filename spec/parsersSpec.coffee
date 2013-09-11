@@ -1,7 +1,8 @@
 games       = require('../js/games.js')
 parsers     = require('../js/parsers.js')
 
-testData_q3 = require('../testdata/q3_lines.json')
+testData_q3     = require('../testdata/q3_lines.json')
+testData_cod4   = require('../testdata/cod4_lines.json')
 
 q3logfile   = 'testdata/q3.log'
 cod4logfile = 'testdata/cod4.log'
@@ -69,19 +70,19 @@ describe "Q3Parser", ->
         expect(parser.games).toBeDefined()
         expect(parser.games instanceof games.Games).toBe(true)
 
-    it "marks started games", ->
-        for line in testData_q3
-            parser.processLine(line)
-
-        expect(parser.games.length).toBe(4)
-        expect(parser.games.where({started: true}).length).toBe(2)
-
     it "bypasses unrecognized strings", ->
         tester = ->
             parser.processLine(testData_q3[0])
             parser.processLine('some generic random string')
 
         expect(tester).not.toThrow()
+
+    it "marks started games", ->
+        for line in testData_q3
+            parser.processLine(line)
+
+        expect(parser.games.length).toBe(4)
+        expect(parser.games.where({started: true}).length).toBe(2)
 
     it "parses 'InitGame' strings and creates items and kills collections", ->
         parser.processLine(testData_q3[1])
@@ -314,4 +315,105 @@ describe "COD4Parser", ->
         expect(parser.games).toBeDefined()
         expect(parser.games instanceof games.Games).toBe(true)
 
+    it "bypasses unrecognized strings", ->
+        tester = ->
+            parser.processLine(testData_cod4[0])
+            parser.processLine('some generic random string')
+
+        expect(tester).not.toThrow()
+
+
+    it "marks started games", ->
+        for line in testData_cod4
+            parser.processLine(line)
+
+        expect(parser.games.length).toBe(8)
+        expect(parser.games.where({started: true}).length).toBe(3)
+
+
+    it "parses 'InitGame' strings and creates items and kills collections", ->
+        parser.processLine(testData_cod4[1])
+
+        expect(parser.games.length).toBe(1)
+        expect(parser.games.at(0).get('items')).toBeDefined()
+        expect(parser.games.at(0).get('items') instanceof games.Items).toBe(true)
+        expect(parser.games.at(0).get('kills')).toBeDefined()
+        expect(parser.games.at(0).get('kills') instanceof games.Kills).toBe(true)
+
+        correctValues = 
+            g_compassShowEnemies: "0"
+            g_gametype: "war"
+            gamename: "Call of Duty 4"
+            mapname: "mp_bloc"
+            protocol: "6"
+            shortversion: "1.7"
+            sv_allowAnonymous: "0"
+            sv_disableClientConsole: "0"
+            sv_floodprotect: "4"
+            sv_hostname: "CoD4Host"
+            sv_maxclients: "24"
+            sv_maxPing: "0"
+            sv_maxRate: "5000"
+            sv_minPing: "0"
+            sv_privateClients: "0"
+            sv_punkbuster: "1"
+            sv_pure: "1"
+            sv_voice: "0"
+            ui_maxclients: "32"
+
+        game = parser.games.first()
+
+        for attribute, value of correctValues
+            expect(game.get(attribute)).toBe(value)
+
+
+    it "parses 'J' strings and creates players", ->
+        for i in [0..30]
+            parser.processLine(testData_cod4[i])
+
+        game = parser.games.first()
+
+        expect(game.get('players').length).toBe(4)
+        expect(game.get('players').first().get('connectOffset')).toBe(3)
+        expect(game.get('players').last().get('connectOffset')).toBe(192)
+        expect(game.get('players').first().get('active')).toBe(true)
+        expect(game.get('players').last().get('active')).toBe(true)
+
+
+    it "parses 'Weapon' strings and logs weapon pickups", ->
+        for i in [0..66]
+            parser.processLine(testData_cod4[i])
+
+        items = parser.games.last().get('items')
+
+        expect(items.length).toBe(5)
+
+        expect(items.at(0).toJSON()).toEqual({ player: 3, type: 'weapon', name: 'm16_gl_mp', timeOffset: 269})
+        expect(items.at(2).toJSON()).toEqual({ player: 1, type: 'weapon', name: 'mp5_mp', timeOffset: 288 })
+        expect(items.at(4).toJSON()).toEqual({ player: 1, type: 'weapon', name: 'mp5_mp', timeOffset: 289 })
+
+
+    it "parses 'say' and 'sayteam' strings and logs players' talks", ->
+        for i in [0..66]
+            parser.processLine(testData_cod4[i])
+
+        chats = parser.games.last().get('chats')
+
+        expect(chats).toBeDefined()
+        expect(chats.length).toBe(2)
+        expect(chats.first().toJSON()).toEqual({ type: 'team', player: 1, rawText: 'QUICKMESSAGE_FOLLOW_ME', message: 'QUICKMESSAGE_FOLLOW_ME', timeOffset: 302})
+        expect(chats.last().toJSON()).toEqual({ type: 'global', player: 3, rawText: 'r', message: 'r', timeOffset: 345})
+
+
+    it "parses 'ExitLevel' and 'ShutdownGame' strings logs game end reason", ->
+        for i in [0..549]
+            parser.processLine(testData_cod4[i])
+
+        games = parser.games
+
+        expect(games.first().get('endReason')).toBe('executed')
+        expect(games.first().get('endTimeOffset')).toBe(659)
+
+        expect(games.last().get('endReason')).toBeUndefined()
+        expect(games.last().get('endTimeOffset')).toBe(2612)
 
