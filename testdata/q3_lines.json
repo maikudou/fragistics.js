@@ -1146,6 +1146,7 @@
 "1051.5 score: -2  ping: 6  client: 1 emuravjev",
 "1053.7 Weapon_Stats: 0 MachineGun:12:2:0:0 Shotgun:22:8:16:0 G.Launcher:10:0:2:0 R.Launcher:101:40:19:0 LightningGun:1416:262:23:0 Railgun:14:4:4:0 Plasmagun:215:19:17:1 Given:5186 Recvd:3412 Armor:3370 Health:2375",
 "1053.7 Weapon_Stats: 1 MachineGun:183:36:0:0 Shotgun:429:74:24:7 G.Launcher:0:0:1:0 R.Launcher:63:16:11:4 LightningGun:714:164:16:9 Railgun:1:0:3:1 Plasmagun:113:12:10:3 Given:3412 Recvd:5186 Armor:1355 Health:850",
+"1053.7 Weapon_Stats: 5 Given:0 Recvd:0 Armor:0 Health:0 TeamDmg:0",
 "1062.0 ClientUserinfoChanged: 0 n\\^0br^3a^0hm^3a^0n\\t\\0\\model\\ranger/blue\\hmodel\\ranger/blue\\c1\\1\\c2\\y\\hc\\100\\w\\2\\l\\0\\rt\\0\\st\\0",
 "1065.0 ShutdownGame:",
 "1065.0 ------------------------------------------------------------"

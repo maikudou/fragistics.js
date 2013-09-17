@@ -242,30 +242,32 @@
               clientId: searchResult[1],
               active: true
             })[0];
-            player.set({
-              damageGiven: Number(searchResult[3]),
-              damageRecieved: Number(searchResult[4]),
-              armorTaken: Number(searchResult[5]),
-              healthTaken: Number(searchResult[6])
-            });
-            if (searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])) {
-              _ref3 = searchResult[0].split(' ');
-              _results = [];
-              for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
-                stat = _ref3[_k];
-                if (statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)) {
-                  _results.push(player.get('weaponStats').add({
-                    weapon: statSearch[1],
-                    shots: Number(statSearch[2]),
-                    hits: Number(statSearch[3]),
-                    pickups: Number(statSearch[4]),
-                    drops: Number(statSearch[5])
-                  }));
-                } else {
-                  _results.push(void 0);
+            if (player != null) {
+              player.set({
+                damageGiven: Number(searchResult[3]),
+                damageRecieved: Number(searchResult[4]),
+                armorTaken: Number(searchResult[5]),
+                healthTaken: Number(searchResult[6])
+              });
+              if (searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])) {
+                _ref3 = searchResult[0].split(' ');
+                _results = [];
+                for (_k = 0, _len2 = _ref3.length; _k < _len2; _k++) {
+                  stat = _ref3[_k];
+                  if (statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)) {
+                    _results.push(player.get('weaponStats').add({
+                      weapon: statSearch[1],
+                      shots: Number(statSearch[2]),
+                      hits: Number(statSearch[3]),
+                      pickups: Number(statSearch[4]),
+                      drops: Number(statSearch[5])
+                    }));
+                  } else {
+                    _results.push(void 0);
+                  }
                 }
+                return _results;
               }
-              return _results;
             }
           }
         }

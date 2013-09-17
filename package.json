@@ -26,6 +26,7 @@
     "grunt-contrib-jade": "~0.8.0",
     "jasmine-node": "~1.11.0",
     "grunt-jasmine-node": "~0.1.0",
-    "underscore": "~1.5.1"
+    "underscore": "~1.5.1",
+    "commander": "~2.0.0"
   }
 }

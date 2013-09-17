@@ -256,6 +256,13 @@ describe "Q3Parser", ->
         expect(game.get('endTimeOffset')).toBe(1010.2)
 
 
+    it "should not crash if no player fond for 'score' event", ->
+        tester = ->
+            for line in testData_q3
+                parser.processLine(line)
+
+        expect(tester).not.toThrow()
+
     it "parses 'score' and logs players' scores", ->
         for line in testData_q3
             parser.processLine(line)

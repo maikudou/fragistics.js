@@ -195,24 +195,25 @@ class parsers.Q3Parser extends parsers.Parser
                 if searchResult = /Weapon_Stats: (\d+)\s?(.*) Given:(\d+) Recvd:(\d+) Armor:(\d+) Health:(\d+)/.exec(lineString)
                     player = @currentGame.get('players').where({clientId: searchResult[1], active: true})[0]
 
-                    player.set
-                        damageGiven:    Number(searchResult[3])
-                        damageRecieved: Number(searchResult[4])
-                        armorTaken:     Number(searchResult[5])
-                        healthTaken:    Number(searchResult[6])
+                    if player?
+                        player.set
+                            damageGiven:    Number(searchResult[3])
+                            damageRecieved: Number(searchResult[4])
+                            armorTaken:     Number(searchResult[5])
+                            healthTaken:    Number(searchResult[6])
 
-                    if searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])
+                        if searchResult = /((\D+):(\d+):(\d+):(\d+):(\d+) )+/.exec(searchResult[2])
 
-                        for stat in searchResult[0].split(' ')
-                            if statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)
-                            
-                                player.get('weaponStats').add
-                                    weapon:     statSearch[1]
-                                    shots:      Number(statSearch[2])
-                                    hits:       Number(statSearch[3])
-                                    pickups:    Number(statSearch[4])
-                                    drops:      Number(statSearch[5])
-                            
+                            for stat in searchResult[0].split(' ')
+                                if statSearch = /(\D+):(\d+):(\d+):(\d+):(\d+)/.exec(stat)
+                                
+                                    player.get('weaponStats').add
+                                        weapon:     statSearch[1]
+                                        shots:      Number(statSearch[2])
+                                        hits:       Number(statSearch[3])
+                                        pickups:    Number(statSearch[4])
+                                        drops:      Number(statSearch[5])
+                                
 
     createGame: (params)->
         @games.add(new games.Game(params))
