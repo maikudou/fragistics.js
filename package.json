@@ -6,7 +6,10 @@
   "scripts": {
     "test": "grunt jasmine_node"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maikudou/fragistics.js.git"
+  },
   "keywords": [
     "quake3",
     "cod",
