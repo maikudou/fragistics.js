@@ -4,7 +4,7 @@
   "description": "Universal multiplayer games log files parser and analyzer",
   "main": "js/fragistics.js",
   "scripts": {
-    "test": "grunt jasmine_node"
+    "test": "jasmine-node --coffee spec/"
   },
   "repository": {
     "type": "git",
