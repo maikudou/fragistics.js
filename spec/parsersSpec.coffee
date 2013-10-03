@@ -135,13 +135,13 @@ describe "Q3Parser", ->
         for i in [0..29]
             parser.processLine(testData_q3[i])
 
-        expect(parser.games.at(0).get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:01:51 GMT+0400 (MSK)').toString())
+        expect(parser.games.at(0).get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:01:51').toString())
         expect(parser.games.at(0).get('serverTimeOffset')).toBe(0)
 
-        expect(parser.games.at(1).get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:02:02 GMT+0400 (MSK)').toString())
+        expect(parser.games.at(1).get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:02:02').toString())
         expect(parser.games.at(1).get('serverTimeOffset')).toBe(0)
 
-        expect(parser.games.last().get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:03:53 GMT+0400 (MSK)').toString())
+        expect(parser.games.last().get('serverTime').toString()).toBe(new Date('Fri May 17 2013 18:03:53').toString())
         expect(parser.games.last().get('serverTimeOffset')).toBe(110.2)
         
 
